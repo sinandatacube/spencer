@@ -19,7 +19,7 @@ import 'package:spencer/utilities/dynamic%20links/dynamic_link.dart';
 import 'package:spencer/utilities/functions.dart';
 import 'package:spencer/utilities/global_variables.dart';
 import 'db_service/db_functions.dart';
-
+PackageInfo? packageInfo;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -30,6 +30,7 @@ void main() async {
 
   DB database = DB();
   await database.dbInit();
+   packageInfo = await PackageInfo.fromPlatform();
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (_) => CartCounter()),
     ChangeNotifierProvider(create: (_) => BulkDescriptionProvider()),

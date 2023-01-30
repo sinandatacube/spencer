@@ -277,7 +277,7 @@ class _NavDrawerState extends State<NavDrawer> {
               ),
             ),
             subtitle: const Center(
-              child: Text("version 1.0.20"),
+            child: Text(packageInfo?.version ?? "Unknown"),
             ),
           )
         ],
